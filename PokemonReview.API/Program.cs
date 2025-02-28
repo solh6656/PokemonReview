@@ -1,9 +1,9 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PokemonReview.API.Data;
-using PokemonReview.API.Interfaces;
-using PokemonReview.API.Repository;
-using PokemonReview.API;
+using PokemonReviewApp;
+using PokemonReviewApp.Data;
+using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Repository;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
