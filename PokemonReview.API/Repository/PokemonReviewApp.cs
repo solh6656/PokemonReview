@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using PokemonReview.API.Data;
 using PokemonReview.API.Interfaces;
 using PokemonReview.API.Models;
 
