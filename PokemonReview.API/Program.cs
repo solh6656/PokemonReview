@@ -1,13 +1,15 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using PokemonReview.API;
-using PokemonReview.API.Data;
-using PokemonReview.API.Interfaces;
-using PokemonReview.API.Repository;
+using PokemonReviewApp;
+using PokemonReviewApp.Data;
+using PokemonReviewApp.Interfaces;
+using PokemonReviewApp.Repository;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddControllers();
 builder.Services.AddTransient<Seed>();
 builder.Services.AddControllers().AddJsonOptions(x =>
@@ -20,8 +22,6 @@ builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
 builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 builder.Services.AddScoped<IReviewerRepository, ReviewerRepository>();
 
-
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -30,8 +30,11 @@ builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+/*var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+Console.WriteLine($"Connection String: {connectionString}");
+*/
 var app = builder.Build();
+
 
 if (args.Length == 1 && args[0] == "seeddata")
 {
@@ -49,7 +52,6 @@ void SeedData(IHost app)
         service.SeedDataContext();
     }
 }
-
 
 
 // Configure the HTTP request pipeline.
