@@ -1,4 +1,5 @@
-﻿using PokemonReview.API.Interfaces;
+﻿using PokemonReview.API.Data;
+using PokemonReview.API.Interfaces;
 using PokemonReview.API.Models;
 
 namespace PokemonReview.API.Repository

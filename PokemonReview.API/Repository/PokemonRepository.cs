@@ -1,4 +1,5 @@
-﻿using PokemonReview.API.DTOs;
+﻿using PokemonReview.API.Data;
+using PokemonReview.API.DTOs;
 using PokemonReview.API.Interfaces;
 using PokemonReview.API.Models;
 
